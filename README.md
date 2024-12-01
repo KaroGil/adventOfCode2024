@@ -2,4 +2,4 @@
 
 | Day                   | Language      |
 | -------------         | ------------- |
-|[Day 1](day1/task2.py) | Python        |
+|[Day 1](day1/) | Python        |
