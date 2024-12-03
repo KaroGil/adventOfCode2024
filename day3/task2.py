@@ -1,14 +1,16 @@
+enabled = True
 def isNumeric(s):
     return s.isdigit() or s[0] == '.'
 
 def parseInput(input):
-    sequence = "mul("
-    allowedSymbols = ['(', ')', 'm', 'u', 'l', ',']
+    sequences = ["mul(", "do(", "don't("]
+    allowedSymbols = ['(', ')', 'm', 'u', 'l', ',', 'd', 'o', 'n', "'", 't']
     startIndex = -1
     parsed = []
     for i in range(0, len(input)):
-        if input.startswith(sequence, i):
-            startIndex = i
+        for seq in sequences:
+            if input.startswith(seq, i):
+                startIndex = i
         if startIndex != -1:
             if input[i] == ")":
                 parsed.append(input[startIndex:i+1])
@@ -20,16 +22,25 @@ def parseInput(input):
 
 
 def multiply(ab):
-    ab = ab[4:-1]
-    a, b = ab.split(',')
-    return int(a) * int(b)
+    global enabled
+    if ab == "don't()":
+        enabled = False
+        return 0
+    elif ab == "do()":
+        enabled = True
+        return 0
+    if enabled:
+        ab = ab[4:-1]
+        a, b = ab.split(',')
+        return int(a) * int(b)
+    else:
+        return 0
 
 with open('input.csv') as f:
     lines = f.readlines()
     total = 0
     
     for line in lines:
-        print(parseInput(line))
         for i in parseInput(line):
             total += multiply(i)
     print(total)
