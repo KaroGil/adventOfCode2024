@@ -84,14 +84,13 @@ with open('input.csv', 'r') as f:
     currentPos = getPos(data)
     direction = getDirection(data, currentPos)
     while True:
-        path.append(currentPos)
+        if currentPos not in path:
+            path.append(currentPos)
 
         currentPos = move(data, currentPos)
 
         if not checkBounds(data, currentPos[0] + 1, currentPos[1] + 1):
             break
     path.append(currentPos)
-    print("Total visited", len(set(path)))
+    print("Total visited", len(path))
 
-
-   
