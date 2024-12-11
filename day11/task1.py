@@ -27,7 +27,7 @@ with open('input.csv', 'r') as file:
     data = file.read().split(' ')
     numbers = [int(number) for number in data]
     print(numbers)
-    for i in range(75):
+    for i in range(25):
         numbers = blink(numbers)
         print(f'Blink {i + 1}')
 print(f'Final number of stones: {len(numbers)}')
