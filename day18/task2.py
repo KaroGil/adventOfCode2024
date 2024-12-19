@@ -36,13 +36,14 @@ with open('input.csv') as file:
     start = (0, 0)
     end = (70, 70)
     stop = []
-    grid = make_grid(71, 71)
-    n = 1024
-    plot_obstacles(obstacles[:n], grid)
+    for n in range(1, len(obstacles) + 1):
+        grid = make_grid(71, 71)
+        plot_obstacles(obstacles[:n], grid)
 
-    if shortest_path(grid, start, end) == -1:
-        print(f'Number of obstacles: {obstacles[n]}')
-        stop.append(obstacles[n - 1])
+        if shortest_path(grid, start, end) == -1:
+            print(f'Number of obstacles: {obstacles[n]}')
+            stop.append(obstacles[n - 1])
+            break
         
     
     print(f'Number of obstacles: {stop}')

@@ -13,3 +13,5 @@
 | [Day 9](day9/)   | Python   | [⭐](day9/task1.py)  | [⭐⭐](day9/task2.py)  |
 | [Day 10](day10/) | Python   | [⭐](day10/task1.py) | [⭐⭐](day10/task2.py) |
 | [Day 11](day11/) | Python   | [⭐](day11/task1.py) | [⭐⭐](day11/task2.py) |
+| [Day 18](day18/) | Python   | [⭐](day18/task1.py) | [⭐⭐](day18/task2.py) |
+| [Day 19](day19/) | Python   | [⭐](day19/task1.py) | [⭐⭐](day19/task2.py) |
