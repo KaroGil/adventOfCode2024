@@ -1,5 +1,3 @@
-
-
 def checkDesign(available, design):
     n = len(design)
     dp = [0 for _ in range(n + 1)]
@@ -17,12 +15,5 @@ with open('test.csv', 'r') as file:
     designs = data[2:]
     available.sort(key=len, reverse=True)
     print(f'Sorted list: {available}')
-    possible = []
-    for design in designs:
-        print(f'Checking design: {design}')
-        if checkDesign(available, design):
-            print(design)
-            possible.append(design)
 
-print(f'Possible designs: {len(possible)}')
 print(f'Possible designs: {sum(checkDesign(available, design) for design in designs)}')
